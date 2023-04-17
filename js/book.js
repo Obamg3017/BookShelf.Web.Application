@@ -1,5 +1,6 @@
 class Book{
     constructor(author, language, subject, title){
+        // This constructor initializes a new instance of a Book object with the given author, language, subject and title
         this.author = author;
         this.language = language;
         this.subject = subject;
@@ -8,6 +9,8 @@ class Book{
     }
 
     render(){
+        // This method creates a list of book information details and adds a button to add book comments. 
+        //It then appends the book information details and book comments to a new HTML element.
         const bookInformationDetails = document.createElement("li");
         const booksCommentButton = document.createElement("button")
         booksCommentButton.innerHTML = "Book Comment";
@@ -50,6 +53,9 @@ class Book{
         return bookInformationDetails
     }
     renderComms(){
+        // This method creates a list of book comments and appends them to an HTML element with an id of "bookCommentsContainer". 
+        //It also retrieves any saved comments for the current book from local storage and updates the comments array.
+
         const bookCommentsList = document.createElement("ul");
         const savedComments = localStorage.getItem(`comments-${this.subject}`);
         if(savedComments !== null){
