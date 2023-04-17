@@ -18,7 +18,7 @@ const bookData = [
       subject: [
         "India -- History -- 19th century -- Fiction",
         "Feral children -- Fiction",
-        "Animals -- Fiction",
+        "Animal -- Fiction",
         "Jungles -- Fiction",
         "India -- Fiction",
         "PR",

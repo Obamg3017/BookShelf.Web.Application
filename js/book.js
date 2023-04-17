@@ -46,6 +46,7 @@ class Book{
         bookInformationDetails.append(p);
         bookInformationDetails.append(booksCommentButton);
         bookInformationDetails.append(this.renderComms())
+        
         return bookInformationDetails
     }
     renderComms(){
@@ -57,6 +58,7 @@ class Book{
         for(const comments of this.comments){
             const booksCommentListItem = document.createElement("li");
             booksCommentListItem.textContent = comments;
+            booksCommentListItem.style.color = "white";
             bookCommentsList.append(booksCommentListItem);
         }
         const commentsContainer = document.querySelector("#bookCommentsContainer");

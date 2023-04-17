@@ -27,6 +27,7 @@ class Bookshelf {
         }
         bookContainer.append(bookShelfInfo);
     }
+    
     addBook(book){
         this.books.unshift(book);
         this.render();

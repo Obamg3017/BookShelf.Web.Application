@@ -7,7 +7,7 @@ document.querySelector("#addBook").addEventListener("click", () => {
     const { value: subject } = document.querySelector("#subject");
     const { value: title } = document.querySelector("#title");
 
-    // bookShelfInstance.addBook(new Book(title, author, subject, language));
+
     const newBook = new Book(author, language, subject, title);
     bookShelfInstance.addBook(newBook);
     localStorage.setItem("bookshelf", JSON.stringify(bookShelfInstance.books));

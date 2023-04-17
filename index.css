@@ -11,18 +11,22 @@ header{
 
 h1{
     margin: 0;
-    color: rgb(94, 11, 94);
+    color: white;
     text-align: center;
 }
 
 a{
-    color: black;
+    font-size: 1.5em;
+    margin-top: 1em;
+    color: white;
     float: right;
     margin-right: 2em;
+    font-weight: bolder;
 }
 
 .para{
     font-size: 2em;
+    color: blueviolet;
 }
 
 #menu{
