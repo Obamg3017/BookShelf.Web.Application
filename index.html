@@ -13,29 +13,36 @@
             <nav>
                 <div>
                     <span>
-                        <a href="index.html">HOME</a>
-                        <a href="about.html">ABOUT</a>
                         <a href="contact.html">CONTACT</a>
+                        <a href="about.html">ABOUT</a>
+                        <a href="index.html">HOME</a>
                     </span>
                 </div>
             </nav>
         </header>
     </div>
     <h1>Olorunfemi's Bookshelf Web Application</h1>
-    <div>
-        <label>Sort by</label>
-        <select>
-            <option value="titleaz">Title A-Z</option>
-            <option value="titleza">Title Z-A</option>
-        </select>
-        <label>Title</label>
-        <input id="title" />
+    <div id="menu">
+        <!-- <label>Sort by</label> -->
+    <select id="sort">
+    <option value="">Sort by:</option>
+    <option value="author-asc">Author (A-Z)</option>
+    <option value="author-desc">Author (Z-A)</option>
+    <option value="language-asc">Language (A-Z)</option>
+    <option value="language-desc">Language (Z-A)</option>
+    <option value="subject-asc">Subject (A-Z)</option>
+    <option value="subject-desc">Subject (Z-A)</option>
+    <option value="title-asc">Title (A-Z)</option>
+    <option value="title-desc">Title (Z-A)</option>
+    </select>
         <label>Author</label>
         <input id="author" />
-        <label>Subject</label>
-        <input id="subject" />
         <label>Language</label>
         <input id="language" />
+        <label>Subject</label>
+        <input id="subject" />
+        <label>Title</label>
+        <input id="title" />
         <button id="addBook">Add New Book</button>
     </div>
 

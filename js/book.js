@@ -1,9 +1,9 @@
 class Book{
-    constructor(title, author, language, subject){
-        this.title = title;
+    constructor(author, language, subject, title){
         this.author = author;
         this.language = language;
         this.subject = subject;
+        this.title = title;
         this.comments = [];
     }
 
@@ -16,12 +16,13 @@ class Book{
             bookCommentInput.type = "text";
             bookCommentInput.maxLength = "280";
             const bookCommentSendButton = document.createElement("button");
-            bookCommentSendButton.innerHTML = "Send Book Comment";
+            bookCommentSendButton.innerHTML = "Add Book Comment";
             bookCommentSendButton.addEventListener("click", () =>{
                 const bookCommentText = bookCommentInput.value;
                 if(bookCommentText){
                     this.comments.push(bookCommentText);
-                    bookInformationDetails.append(this.renderComments());
+                    bookInformationDetails.append(this.renderComms());
+                    localStorage.setItem(`comments-${this.subject}`, JSON.stringify(this.comments));
                     bookCommentInput.value = " "
                 }
             });
@@ -44,11 +45,15 @@ class Book{
         p.textContent = `Subject: ${this.subject}`;
         bookInformationDetails.append(p);
         bookInformationDetails.append(booksCommentButton);
-        bookInformationDetails.append(this.renderComments())
+        bookInformationDetails.append(this.renderComms())
         return bookInformationDetails
     }
-    renderComments(){
+    renderComms(){
         const bookCommentsList = document.createElement("ul");
+        const savedComments = localStorage.getItem(`comments-${this.subject}`);
+        if(savedComments !== null){
+            this.comments = JSON.parse(savedComments)
+        }
         for(const comments of this.comments){
             const booksCommentListItem = document.createElement("li");
             booksCommentListItem.textContent = comments;
@@ -59,3 +64,8 @@ class Book{
         return bookCommentsList;
     }
 }
+
+
+  
+
+

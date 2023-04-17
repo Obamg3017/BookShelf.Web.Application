@@ -2,10 +2,32 @@ const bookShelfInstance = new Bookshelf();
 bookShelfInstance.seed(bookData);
 
 document.querySelector("#addBook").addEventListener("click", () => {
-    const { value: title } = document.querySelector("#title");
     const { value: author } = document.querySelector("#author");
-    const { value: subject } = document.querySelector("#subject");
     const { value: language } = document.querySelector("#language");
+    const { value: subject } = document.querySelector("#subject");
+    const { value: title } = document.querySelector("#title");
 
-    bookShelfInstance.addBook(new Book(title, author, subject, language));
+    // bookShelfInstance.addBook(new Book(title, author, subject, language));
+    const newBook = new Book(author, language, subject, title);
+    bookShelfInstance.addBook(newBook);
+    localStorage.setItem("bookshelf", JSON.stringify(bookShelfInstance.books));
 });
+
+const bookshelfFromLocalStorage = localStorage.getItem("bookshelf");
+if (bookshelfFromLocalStorage) {
+    const parsedBookshelf = JSON.parse(bookshelfFromLocalStorage);
+    parsedBookshelf.forEach((book) => {
+        const { author, language, subject, title, comments } = book;
+        const newBook = new Book(author, language, subject, title);
+        newBook.comments = comments;
+        bookShelfInstance.addBook(newBook);
+    });
+    bookShelfInstance.render();
+} else {
+    bookShelfInstance.render();
+}
+
+
+
+
+

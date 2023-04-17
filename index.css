@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgba(242, 183, 19, 0.979);
 }
 
 header{
@@ -10,9 +11,25 @@ header{
 
 h1{
     margin: 0;
-    color: black;
+    color: rgb(94, 11, 94);
+    text-align: center;
 }
 
 a{
     color: black;
+    float: right;
+    margin-right: 2em;
+}
+
+.para{
+    font-size: 2em;
+}
+
+#menu{
+    margin: 2em;
+}
+
+h2, h3, h4, p{
+    font-size: 2rem;
+    color: azure;
 }
